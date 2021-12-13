@@ -1,0 +1,34 @@
+# dataset frequency
+day:
+
+    # dataset file
+    - description: S&P dataset with 1 day frequency. ene 2012 - june 2021
+      file_name: ES_day_2021-2021_6.csv
+      url: https://mega.nz/file/PYtEQSKJ#iCAd42fywRakQeTzVx6LqLzFbn3q8nndX4wul_eqzUc
+
+    - description: Nasdaq dataset with 1 day frequency. ene 2012 - june 2021
+      file_name: NQ_day_2021-2021_6.csv
+      url: https://mega.nz/file/mN02wQ7D#EwEj-BtejPghBTWS8unYKQjktN9Ag8Uu1toWGqi1H2A
+
+    - description: Fed dataset 1 day frequency. ene 2012 - june 2021
+      file_name: FED_day_2021-2021_6.csv
+      url: https://mega.nz/file/zJtgnKiZ#vKaYxUlLYcmnVZmSYkPGumU_BS-Xi7ZcMzmQd6qEX5Q
+
+vol:
+    - description: S&P volume profile 1 day frequency. ene 2012 - june 2021
+      file_name: ES_vol_2021-2021_6.zip
+      url: https://mega.nz/file/nFk0iA5R#g1BbfLWlw9aq3mOsrqDayVMhB75dMpLBns_WP3pAuOY
+
+minute:
+    - description: S&P dataset with 1 minute frequency. ene 2012 - june 2021
+      file_name: ES_min_2021-2021_6.zip
+      url: https://mega.nz/file/KV8GwIAL#jre3KRvDtiFuOAkyyRTKaE9COY1Vfm5iuBH_yu34E4M
+
+    - description: Nasdaq dataset with 1 minute frequency. ene 2012 - june 2021
+      file_name: NQ_min_2021-2021_6.zip
+      url: https://mega.nz/file/WA0UWICZ#cpO1cq9q1pmzgCsnFQEdpsKNHDwXx-Db9uGolpGMpiY
+
+
+        
+        
+        

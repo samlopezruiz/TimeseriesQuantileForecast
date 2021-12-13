@@ -1,0 +1,18 @@
+datasets:
+  - subfolder: day
+    filename: ES_day_2021-2021_6.csv
+
+  - subfolder: day
+    filename: NQ_day_2021-2021_6.csv
+
+  - subfolder: day
+    filename: FED_day_2021-2021_6.csv
+
+hmm_cfg:
+  trim_data_from: 2011-12
+  trim_data_to: 2021-12
+  resampling: D
+  macd_vars: ['ESc']
+  return_vars: ['ESc']
+  number_of_states: 5
+  vars: ['ESc_r', 'T10Y2Y', '^VIX']

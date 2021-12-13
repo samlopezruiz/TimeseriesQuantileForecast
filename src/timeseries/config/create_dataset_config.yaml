@@ -1,0 +1,23 @@
+data_config:
+    mkt_data_cfg:
+        inst: ES
+        suffix: 2012_5-2021_6
+        sampling: day
+        src_folder: data
+        market: cme
+        data_from: 2011-12
+        data_to: 2021-12
+
+    fed_data_cfg:
+        inst: FED
+        sampling: day
+        suffix: 2012_1-2021_6
+        market: fed
+        src_folder: data
+        
+    mkt_data_cfg2:
+        inst: NQ
+        suffix: 2012_5-2021_6
+        sampling: day
+        src_folder: data
+        market: cme

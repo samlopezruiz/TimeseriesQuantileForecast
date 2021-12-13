@@ -1,0 +1,27 @@
+data_cfg:
+    inst: ES
+    subfolder: minute
+    filename: ES_min_2021-2021_6.csv
+    trim_data_from: 2015-01
+    trim_data_to: 2021-06
+    append_datasets:
+        - filename: Vol_5levels_ESc_ES_vol_2021-2021_6.z
+          path: ['vol_profile'] # specify path as list
+    downsample: True
+    downsample_p: 60T
+
+split_cfg:
+    # group by year, week, day, or hour
+    group: week
+    groups_of: 8
+    test_ratio: 0.15
+    valid_ratio: 0.15
+    random: True
+    time_thold:
+        days:
+        hours: 3
+        minutes:
+        seconds:
+    test_time_start: (8, 30)
+    test_time_end: (15, 0)
+    time_delta_split: True

@@ -1,0 +1,9 @@
+    date:
+        DataType: CATEGORICAL
+        InputType: TIME
+    log_vol:
+        DataType: CATEGORICAL
+        InputType: TIME
+    open_to_close:
+        DataType: CATEGORICAL
+        InputType: TIME

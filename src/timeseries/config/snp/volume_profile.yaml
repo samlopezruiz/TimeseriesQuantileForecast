@@ -1,0 +1,18 @@
+# market dataset
+mkt_ds_cfg:
+    inst: ES
+    subfolder: minute
+    filename: ES_min_2021-2021_6.csv
+
+# volume dataset
+vol_ds_cfg:
+    inst: ES
+    subfolder: vol
+    filename: ES_vol_2021-2021_6.csv
+
+# indicator configuration:
+# the distance between the 'price' feature is
+# and the high/low volume nodes is calculated
+indicator_cfg:
+    price: ESc
+    n_levels: 5

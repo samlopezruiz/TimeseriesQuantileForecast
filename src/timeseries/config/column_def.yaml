@@ -1,0 +1,18 @@
+# Define the variables used in model
+# DataTypes: CATEGORICAL, REAL_VALUED, 
+# InputTypes: ID, TIME, TARGET, OBSERVED_INPUT, KNOWN_INPUT
+# VarName: the variable name in the DataFrame
+ 
+ColumnDefinition:
+
+    - VarName: Symbol
+      DataType: CATEGORICAL
+      InputType: ID
+      
+    - VarName: open_to_close
+      DataType: REAL_VALUED
+      InputType: TARGET
+      
+    - VarName: day_of_month
+      DataType: REAL_VALUED
+      InputType: TARGET

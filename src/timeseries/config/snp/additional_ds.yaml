@@ -1,0 +1,18 @@
+datasets:
+  - subfolder: day
+    inst: NQ
+    filename: NQ_day_2021-2021_6.csv
+    trim_data_from: 2011-12
+    trim_data_to: 2021-12
+    downsample: True
+    downsample_p: 60T
+
+    # add additional datasets if needed
+#  - subfolder: day
+#    inst: NQ
+#    filename: NQ_day_2021-2021_6.csv
+#    trim_data_from: 2011-12
+#    trim_data_to: 2021-12
+#    downsample: True
+#    downsample_p: 60T
+
