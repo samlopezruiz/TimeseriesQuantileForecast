@@ -1,6 +1,6 @@
 fixed_params:
-    quantiles: [0.3, 0.5, 0.7]
-    num_epochs: 1
+    quantiles: [0.2, 0.5, 0.8]
+    num_epochs: 100
     early_stopping_patience: 5
     multiprocessing_workers: 12
 
@@ -8,7 +8,7 @@ model_params:
     total_time_steps: 53
     num_encoder_steps: 48
     dropout_rate: 0.3
-    hidden_layer_size: 16
+    hidden_layer_size: 128
     learning_rate: 0.01
     minibatch_size: 64
     max_gradient_norm: 0.01
