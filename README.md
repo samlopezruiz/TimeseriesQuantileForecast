@@ -272,8 +272,9 @@ additionalDefinitions:
 The following two images show the variable selection for the running example (left) and the attention according the
 position index for the first transformer head (right).
 
-<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/q159_hist_attn.png?raw=true" width="300" height="200" />
-<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/hist_attn_position_head.png?raw=true" width="400" height="200" />
+<img align="left" src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/q159_hist_attn.png?raw=true" width="300" height="200" />
+<img align="left" src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/hist_attn_position_head.png?raw=true" width="400" height="200" />
+
 
 The result from the multi objective optimization consists of the Pareto front with the _quantile coverage risk_ and _quantile estimation risk_ as
 the objectives. The left images shows the pareto front found for three configurations of quantiles and the
@@ -285,5 +286,6 @@ threshold increment in the total error and which can later be used to generate f
 
 The forecast of the solution marked in red is shown in the following image. It can be observed that the larger prediction
 intervals have increased with respect to the forecast shown previously and therefore the _quantile coverage risk_ is reduced.
+
 <img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/TFTModel_ES_ema_r_q258_NSGA2_g100_p100_s0_lix33_uix31_tol5_all_pred_id31.png?raw=true" width="700" height="250"/>
 
