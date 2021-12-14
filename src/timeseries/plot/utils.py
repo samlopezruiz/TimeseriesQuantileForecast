@@ -8,6 +8,26 @@ from src.timeseries.utils.files import create_dir, get_new_file_path
 
 template = ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "none"]
 
+def group_forecasts(forecasts, n_output_steps, target_col):
+    if target_col:
+        features = ['{} t+{}'.format(target_col, i + 1) for i in range(n_output_steps)]
+    else:
+        features = ['t+{}'.format(i + 1) for i in range(n_output_steps)]
+
+    forecasts_grouped = {}
+    for key, df in forecasts.items():
+
+        identifiers_forecasts = {}
+        for id, df_grouped in df.groupby('identifier'):
+            df_grouped = df_grouped.set_index('forecast_time', inplace=False)
+            shifted = {}
+            for i, feature in enumerate(features):
+                shifted[feature] = df_grouped[feature].shift(i)
+            identifiers_forecasts[id] = pd.DataFrame(shifted)
+
+        forecasts_grouped[key] = identifiers_forecasts
+
+    return forecasts_grouped
 
 def plotly_params_check(df, instrument=None, **kwargs):
     if not isinstance(df, pd.DataFrame):

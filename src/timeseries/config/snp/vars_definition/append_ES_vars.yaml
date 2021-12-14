@@ -1,0 +1,49 @@
+# InputTypes: ID, TIME, TARGET, OBSERVED_INPUT, KNOWN_INPUT
+# dataTypes: CATEGORICAL, REAL_VALUED
+# VarName: the variable name in the DataFrame
+ 
+includeColumnDefinition:
+
+    - varName: ESc_r
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+      
+    - varName: ESo_r
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+      
+    - varName: ESh_r
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: ESl_r
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: ESc_rsi
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: volume
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: adl
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: delta
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: atr
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: ESc_macd_6_12
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: ESc_macd_12_24
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT

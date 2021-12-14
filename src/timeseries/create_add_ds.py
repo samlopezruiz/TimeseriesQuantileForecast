@@ -1,5 +1,6 @@
 from src.timeseries.utils.config import read_config
 from src.timeseries.utils.dataset import load_dataset
+from src.timeseries.utils.filename import update_trim_range
 from src.timeseries.utils.preprocessing import downsample_df
 from src.timeseries.utils.save import save_market_data
 from src.timeseries.utils.split import time_subset
@@ -24,5 +25,6 @@ if __name__ == '__main__':
             result = {
                 'data': df
             }
+            update_trim_range(df, data_cfg)
             save_market_data(result, project, data_cfg)
 

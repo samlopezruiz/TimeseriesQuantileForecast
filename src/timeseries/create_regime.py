@@ -3,7 +3,7 @@ import os
 from src.timeseries.plot.ts import plotly_ts_regime_hist_vars
 from src.timeseries.utils.config import read_config
 from src.timeseries.utils.dataset import load_multiple_markets, get_data_root
-from src.timeseries.utils.filename import hmm_filename
+from src.timeseries.utils.filename import hmm_filename, update_trim_range
 from src.timeseries.utils.files import save_vars
 from src.timeseries.utils.hmm import append_hmm_states, count_regimes
 from src.timeseries.utils.preprocessing import add_features
@@ -44,6 +44,7 @@ if __name__ == '__main__':
             'data_cfgs': cfg['datasets']
         }
 
+        update_trim_range(df_reg, cfg['hmm_cfg'])
         file_path = os.path.join(get_data_root(project), 'regime', hmm_filename(cfg['hmm_cfg']))
         save_vars(result, file_path, use_date_suffix=False)
 

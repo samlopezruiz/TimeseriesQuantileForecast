@@ -1,0 +1,30 @@
+# InputTypes: ID, TIME, TARGET, OBSERVED_INPUT, KNOWN_INPUT
+# dataTypes: CATEGORICAL, REAL_VALUED
+# VarName: the variable name in the DataFrame
+
+# note the key is: "includeColumnDefinition" insteaad of 'columnDefinition'
+includeColumnDefinition:
+
+    - varName: days_from_start
+      dataType: REAL_VALUED
+      inputType: KNOWN_INPUT
+      
+    - varName: hour_of_day
+      dataType: CATEGORICAL
+      inputType: KNOWN_INPUT
+      
+    - varName: day_of_week
+      dataType: CATEGORICAL
+      inputType: KNOWN_INPUT
+
+    - varName: day_of_month
+      dataType: CATEGORICAL
+      inputType: KNOWN_INPUT
+
+    - varName: week_of_year
+      dataType: CATEGORICAL
+      inputType: KNOWN_INPUT
+
+    - varName: month
+      dataType: CATEGORICAL
+      inputType: KNOWN_INPUT

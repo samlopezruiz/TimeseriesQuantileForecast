@@ -1,0 +1,21 @@
+# InputTypes: ID, TIME, TARGET, OBSERVED_INPUT, KNOWN_INPUT
+# dataTypes: CATEGORICAL, REAL_VALUED
+# VarName: the variable name in the DataFrame
+ 
+includeColumnDefinition:
+
+    - varName: NQc_r
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+      
+    - varName: NQ_atr
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+      
+    - varName: NQc_macd_12_24
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: NQ_volume
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT

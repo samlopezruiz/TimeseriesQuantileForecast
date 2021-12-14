@@ -1,0 +1,53 @@
+# InputTypes: ID, TIME, TARGET, OBSERVED_INPUT, KNOWN_INPUT
+# dataTypes: CATEGORICAL, REAL_VALUED
+# VarName: the variable name in the DataFrame
+ 
+includeColumnDefinition:
+
+    - varName: p_dist_-2
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+      
+    - varName: p_dist_-1
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+      
+    - varName: p_dist_1
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: p_dist_2
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: norm_vol_-2
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: norm_vol_-1
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: norm_vol_1
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: norm_vol_2
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: is_max_-2
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: is_max_-1
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: is_max_1
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT
+
+    - varName: is_max_2
+      dataType: REAL_VALUED
+      inputType: OBSERVED_INPUT

@@ -7,7 +7,7 @@ from src.timeseries.plot.ts import plotly_ts_candles, plotly_ts_regime
 from src.timeseries.utils.config import read_config
 from src.timeseries.utils.dataframe import resample_dfs
 from src.timeseries.utils.dataset import load_dataset, get_data_root, load_file
-from src.timeseries.utils.filename import subsets_and_test_filename
+from src.timeseries.utils.filename import split_filename, update_trim_range
 from src.timeseries.utils.preprocessing import downsample_df, append_timediff_subsets, add_date_known_inputs
 from src.timeseries.utils.save import save_subsets_and_test
 from src.timeseries.utils.split import time_subset, set_subsets_and_test
@@ -59,7 +59,9 @@ if __name__ == '__main__':
     add_date_known_inputs(df_subsets)
 
     #%%
-    img_path = os.path.join(get_data_root(project), 'split', 'img', subsets_and_test_filename(cfg))
+    update_trim_range(df_subsets, cfg['data_cfg'])
+    img_path = os.path.join(get_data_root(project), 'split', 'img', split_filename(cfg))
+
     plotly_ts_regime(df_subsets.iloc[-40000:-10000, :],
                      features=['ESc', 'test_train_subset', 'week_of_year'],
                      rows=[0, 1, 2],

@@ -1,0 +1,43 @@
+# In this file the configuration for
+# the data preprocessing is defined
+
+# the following parameters are available for preprocessing:
+# macd_vars: ['ESc']
+  # list of variable to calculate the MACD indicator
+# rsi_vars: ['ESc']
+  # list of variable to calculate the RSI indicator
+# macd_periods:
+  # list of periods of MACD to calculate the MACD indicator
+# returns_vars:
+  # list of variables for which the returns will be calculated
+# returns_from_ema:
+  # calculates the returns from the EMA(price, period)
+# true_target:
+  # specify when the true target is different from the target used for forecasting
+  # e.g. the price might be the true target, but the returns are used as target variable in forecasting
+
+# main dataset
+target_dataset:
+  filename: split_ES_minute_60T_dwn_smpl_2015_1_to_2021_6_g8week_r15
+  subfolder: ['split']
+  macd_vars: ['ESc']
+  rsi_vars: ['ESc']
+  macd_periods: [24, 12, 6]
+  returns_vars: ['ESc', 'ESh', 'ESo', 'ESl']
+  returns_from_ema: True,
+  ema_period: 3
+  true_target: ESc_e3
+
+# append additional datasets features
+additional_datasets:
+  - filename: regime_ESc_r_T10Y2Y_VIX_2021_6_to_2021_6
+    subfolder: ['regime']
+    use_only_vars: ['state']
+
+  - filename: subset_NQ_day_60T_dwn_smpl_2012_5_to_2021_6
+    subfolder: ['mkt']
+    prefix_col: NQ
+    macd_vars: ['NQc']
+    macd_periods: [12]
+    returns_vars: ['NQc', 'NQh', 'NQo', 'NQl']
+    

@@ -1,0 +1,27 @@
+# InputTypes: ID, TIME, TARGET, OBSERVED_INPUT, KNOWN_INPUT
+# dataTypes: CATEGORICAL, REAL_VALUED
+# VarName: the variable name in the DataFrame
+ 
+columnDefinition:
+
+    - varName: ESc_e3_r
+      dataType: CATEGORICAL
+      inputType: TARGET
+      
+    - varName: test_train_subset
+      dataType: REAL_VALUED
+      inputType: ID
+      
+    - varName: datetime
+      dataType: REAL_VALUED
+      inputType: TIME
+
+    - varName: state
+      dataType: CATEGORICAL
+      inputType: STATIC_INPUT
+
+additionalDefinitions:
+  - filename: append_known_date
+  - filename: append_ES_vars
+  - filename: append_NQ_vars
+  - filename: append_vol_profile_small
