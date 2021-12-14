@@ -36,7 +36,7 @@ def get_new_file_path(file_path, extension, use_date_suffix):
 def save_df(df, file_path, use_date_suffix=False):
     create_dir(file_path)
     path = os.path.join(get_new_file_path(file_path, '.csv', use_date_suffix))
-    print('Saving Dataframe to: \n{}'.format(path))
+    print('Saving DataFrame to: \n{}'.format(path))
     df.to_csv(path)
 
 

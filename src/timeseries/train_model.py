@@ -1,16 +1,14 @@
 import os
 import time
-
 import telegram_send
 import tensorflow as tf
-
-# tensorboard --logdir src/timeseries/experiments/market/outputs/saved_models/snp/5t_ema_q258/logs/fit
 from src.timeseries.utils.config import read_config
 from src.timeseries.utils.filename import quantiles_name
 from src.timeseries.utils.files import save_vars
 from src.timeseries.utils.harness import get_model_data_config, train_test_model
 from src.timeseries.utils.results import post_process_results
 
+# tensorboard --logdir src/timeseries/experiments/market/outputs/saved_models/snp/5t_ema_q258/logs/fit
 if __name__ == "__main__":
 
     print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
@@ -22,7 +20,7 @@ if __name__ == "__main__":
                    'send_notifications': True}
 
     experiment_cfg = {'experiment_name': '60t_ema_q357',
-                      'model_cfg': 'q159_i48_o5_h4_e100',
+                      'model_cfg': 'q357_i48_o5_h4',
                       'preprocess_cfg': 'ES_60t_regime_2015_1_to_2021_6_grp_w8_ema_r',
                       'vars_definition_cfg': 'ES_ema_r',
                       'architecture': 'TFTModel'
@@ -62,8 +60,8 @@ if __name__ == "__main__":
     post_process_results(results, data_formatter, experiment_cfg)
 
     if general_cfg['save_results']:
-        results['model_cfg'] = model_cfg['model_params']
-        results['fixed_cfg'] = model_cfg['fixed_params']
+        results['model_params'] = model_cfg['model_params']
+        results['fixed_params'] = model_cfg['fixed_params']
         results['experiment_cfg'] = experiment_cfg
         save_vars(results, os.path.join(config.results_folder,
                                         experiment_cfg['experiment_name'],

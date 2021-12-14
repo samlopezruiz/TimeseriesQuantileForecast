@@ -63,10 +63,10 @@ def get_output_folder():
     return root_folder
 
 
-def get_result_folder(cfg):
+def get_result_folder(cfg, project=''):
     return os.path.join(get_output_folder(),
                         'results',
-                        cfg.get('formatter', ''),
+                        project,
                         cfg.get('experiment_name', ''))
 
 

@@ -4,6 +4,7 @@ import os
 from src.timeseries.data_formatter.snp import SnPFormatter
 from src.timeseries.utils.config import get_cfg_folder, read_config
 from src.timeseries.utils.dataset import get_inst_ohlc_names, get_data_root
+from src.timeseries.utils.filename import get_output_folder
 
 
 def prepare_dataset_cfg(project, cfg):
@@ -42,7 +43,6 @@ class ExperimentConfig(object):
 
     def __init__(self,
                  project,
-                 formatter,
                  cfg,
                  ):
         """Creates configs based on default experiment chosen.
@@ -52,15 +52,15 @@ class ExperimentConfig(object):
       root_folder: Root folder to save all outputs of training.
     """
 
-        if formatter not in self.default_experiments:
-            raise ValueError('Unrecognised experiment={}'.format(formatter))
+        if project not in self.default_experiments:
+            raise ValueError('Unrecognised experiment={}'.format(project))
 
         root_folder = cfg.get('root_folder', None)
 
+
         # Defines all relevant paths
         if root_folder is None:
-            root_folder = os.path.normpath(os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), '..', 'outputs'))
+            root_folder = get_output_folder()
             print('Using root folder {}'.format(root_folder))
 
         self.architecture = cfg.get('architecture', 'TFTModel')

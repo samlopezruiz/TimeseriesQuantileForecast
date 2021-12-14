@@ -32,7 +32,7 @@ with poolcontext(processes=cpu_count()) as pool:
 
 
 def get_model_data_config(project, experiment_cfg, model_params, fixed_params):
-    config = ExperimentConfig(project, project, experiment_cfg)
+    config = ExperimentConfig(project, experiment_cfg)
     formatter = config.make_data_formatter()
     formatter.update_model_params(model_params)
     formatter.update_fixed_params(fixed_params)
