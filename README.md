@@ -248,3 +248,9 @@ additionalDefinitions:
 ```
 
 ## Results
+![alt text](https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/TFTModel_ES_ema_r_q258_NSGA2_g100_p100_s0_lix33_uix31_tol5_all_pred_id31.png?raw=true)
+
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/q159_hist_attn.png?raw=true" width="200" height="400" />
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/TFTModel_ES_ema_r_q258_NSGA2_g100_p100_s0_lix33_uix31_tol5_all_pred_id31.png?raw=true" width="200" height="400" />
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/TFTModel_ES_ema_r_q258_NSGA2_g100_p100_s0_lix33_uix31_tol5_pf.png?raw=true" width="400" height="400" />
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/vary_quantiles_ES_ema_r_moo_results.png?raw=true" width="400" height="400" />
