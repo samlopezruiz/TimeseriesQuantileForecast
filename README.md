@@ -12,6 +12,25 @@ in the following paper: https://arxiv.org/pdf/1912.09363.pdf <br>
 The model consists on a novel attention-based architecture which combines high-performance multi-horizon 
 forecasting with interpretable insights into temporal dynamics. <br>
 Its respective code can be found in: https://github.com/google-research/google-research/tree/master/tft
+<br>
+The quantile predictions obtained are plotted with the following nomenclature:
+* _Target variable_:
+exponential moving average (EMA) for the ES closing price in `red` color.
+* _Mean quantile forecast_:
+forecast for q=0.5 in `blue` color.
+
+* _True target variable_:
+ES closing price is the original target variable before the EMA smoothing and is shown in `magenta` color
+
+* _Lower and upper quantiles_:
+Quantile prediction interval is shown in `gray`.
+
+* _Opacity_:
+Predictions in the image are done with a 5 time step forecast horizon. The opacity in the prediction intervals (`gray`) and
+mean prediction (`blue`) corresponds to the time step the prediction is made. Higher opacity means the prediction was
+made fewer steps in the past.
+
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/TFTModel_ES_ema_r_q258_NSGA2_g100_p100_s0__tol5_all_pred_id31.png?raw=true" width="700" height="250"/>
 
 ## Code Organisation
 This repository contains the source code for the Multi Objective Optimization of the quantiles forecasting for the 
@@ -136,7 +155,9 @@ day:
 ```
 Configure `split_dataset.yaml` to select the respective target data and the split configuration.
 The dataset is divided in time subsets and then splitted into train, test and valid subsets. The dataset can 
-also be downsampled and trimmed if needed
+also be downsampled and trimmed if needed. The following image shows an example of the subsets shown with different colors:
+
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/split_ES_minute_5T_dwn_smpl_2015-01_to_2021-06_g12week_r15.png?raw=true" width="400" height="200" />
 
 ```yaml
 data_cfg:
@@ -248,9 +269,21 @@ additionalDefinitions:
 ```
 
 ## Results
-![alt text](https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/TFTModel_ES_ema_r_q258_NSGA2_g100_p100_s0_lix33_uix31_tol5_all_pred_id31.png?raw=true)
+The following two images show the variable selection for the running example (left) and the attention according the
+position index for the first transformer head (right).
 
-<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/q159_hist_attn.png?raw=true" width="200" height="400" />
-<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/TFTModel_ES_ema_r_q258_NSGA2_g100_p100_s0_lix33_uix31_tol5_all_pred_id31.png?raw=true" width="200" height="400" />
-<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/TFTModel_ES_ema_r_q258_NSGA2_g100_p100_s0_lix33_uix31_tol5_pf.png?raw=true" width="400" height="400" />
-<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/vary_quantiles_ES_ema_r_moo_results.png?raw=true" width="400" height="400" />
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/q159_hist_attn.png?raw=true" width="300" height="200" />
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/hist_attn_position_head.png?raw=true" width="400" height="200" />
+
+The result from the multi objective optimization consists of the Pareto front with the _quantile coverage risk_ and _quantile estimation risk_ as
+the objectives. The left images shows the pareto front found for three configurations of quantiles and the
+right image shows the pareto front and a selected solution (in red) inside a tolerance window defined by a
+threshold increment in the total error and which can later be used to generate forecasts. 
+
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/vary_quantiles_ES_ema_r_moo_results.png?raw=true" width="350" height="350" />
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/TFTModel_ES_ema_r_q258_NSGA2_g100_p100_s0_lix33_uix31_tol5_pf.png?raw=true" width="350" height="350" />
+
+The forecast of the solution marked in red is shown in the following image. It can be observed that the larger prediction
+intervals have increased with respect to the forecast shown previously and therefore the _quantile coverage risk_ is reduced.
+<img src="https://github.com/samlopezruiz/TimeseriesQuantileForecast/blob/master/src/docs/TFTModel_ES_ema_r_q258_NSGA2_g100_p100_s0_lix33_uix31_tol5_all_pred_id31.png?raw=true" width="700" height="250"/>
+
