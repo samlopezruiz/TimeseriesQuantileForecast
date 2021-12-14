@@ -1,5 +1,5 @@
 # InputTypes: ID, TIME, TARGET, OBSERVED_INPUT, KNOWN_INPUT
-# dataTypes: CATEGORICAL, REAL_VALUED
+# dataTypes: CATEGORICAL, REAL_VALUED, DATE
 # VarName: the variable name in the DataFrame
 
 # note the key is: "includeColumnDefinition" insteaad of 'columnDefinition'

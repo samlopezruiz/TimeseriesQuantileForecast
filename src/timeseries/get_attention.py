@@ -11,7 +11,7 @@ if __name__ == "__main__":
                    }
 
     project = 'snp'
-    results_cfg = {'experiment_name': '60t_ema_q357',
+    results_cfg = {'experiment_name': '60t_ema_q159',
                    'results': 'TFTModel_ES_ema_r_q159_lr01_pred'
                    }
 

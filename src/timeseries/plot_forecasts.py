@@ -14,13 +14,11 @@ if __name__ == "__main__":
                    'plot_title': False}
 
     project = 'snp'
-    forecast_cfg = {'experiment_name': '60t_ema_q357',
-                    'forecast': 'TFTModel_ES_ema_r_q159_NSGA2_g100_p100_s0_lix53_uix38_tol5_all_pred',
-                    'subfolders': ['moo', 'selec_sols']
+    forecast_cfg = {'experiment_name': '60t_ema_q159',
+                    'forecast': 'TFTModel_ES_ema_r_q159_lr01_pred',
+                    'subfolders': []  # ['moo', 'selec_sols']
                     }
-    # TFTModel_ES_ema_r_q357_NSGA2_g200_p200_s1_lix68_uix76_tol5_all_pred
-    # TFTModel_ES_ema_r_q258_NSGA2_g200_p200_s1_lix70_uix75_tol5_all_pred
-    # TFTModel_ES_ema_r_q159_NSGA2_g200_p200_s1_lix67_uix79_tol5_all_pred
+
     additional_vars = ['ESc']
 
     base_path = os.path.join(get_result_folder(forecast_cfg, project),
@@ -59,17 +57,15 @@ if __name__ == "__main__":
     # plot_identifiers = identifiers[:5]
     # plot_segments = get_plot_segments(plot_identifiers, forecasts_grouped)
 
-    # for 60t
+    # for 60T
+    # plot segments can be specified with x and y ranges
+    # plot_segments.append({'id': 2,
+    #                       'y_range': [1960, 2040],
+    #                       'x_range': ['2015-03-15T19:00', '2015-03-20T16:00']})
     plot_segments = []
-    plot_segments.append({'id': 2,
-                          'y_range': [1960, 2040],
-                          'x_range': ['2015-03-15T19:00', '2015-03-20T16:00']})
-    plot_segments.append({'id': 11,
-                          'y_range': [2135, 2165],
-                          'x_range': ['2016-08-15T20:00', '2016-08-19T17:00']})
-    plot_segments.append({'id': 31,
-                          'y_range': [2890, 2990],
-                          'x_range': ['2019-09-24T01:00', '2019-09-27T16:00']})
+    plot_segments.append({'id': 2, 'y_range': None, 'x_range': None})
+    plot_segments.append({'id': 11, 'y_range': None, 'x_range': None})
+    plot_segments.append({'id': 31, 'y_range': None, 'x_range': None})
 
     # %%
 

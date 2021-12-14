@@ -173,7 +173,7 @@ def create_vp_levels_indicators(price_history,
         # price_index[i-1] < price <= price_index[i]
         ix_price = np.searchsorted(price_index, price, side='left')
         if i % 10000 == 0:
-            print('Indicator creation progress: {} %'.format(round(100 * (i / len(price_history)), 1)), end='\r')
+            print('\rIndicator creation progress: {} %'.format(round(100 * (i / len(price_history)), 1)), end='')
 
         # iterate higher levels
         for n in range(n_levels):

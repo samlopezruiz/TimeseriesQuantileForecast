@@ -19,8 +19,8 @@ if __name__ == "__main__":
     general_cfg = {'save_results': True,
                    'send_notifications': True}
 
-    experiment_cfg = {'experiment_name': '60t_ema_q357',
-                      'model_cfg': 'q357_i48_o5_h4',
+    experiment_cfg = {'experiment_name': '60t_ema_q159',
+                      'model_cfg': 'q159_i48_o5_h4_e100',
                       'preprocess_cfg': 'ES_60t_regime_2015_1_to_2021_6_grp_w8_ema_r',
                       'vars_definition_cfg': 'ES_ema_r',
                       'architecture': 'TFTModel'
@@ -53,9 +53,12 @@ if __name__ == "__main__":
                                             )
 
     if general_cfg['send_notifications']:
-        mins = round((time.time() - t0) / 60, 0)
-        gens = 'in {} epochs'.format(len(results['fit_history']['loss']) if results['fit_history'] is not None else '')
-        telegram_send.send(messages=["training for {} completed in {} mins {}".format(filename, mins, gens)])
+        try:
+            mins = round((time.time() - t0) / 60, 0)
+            gens = 'in {} epochs'.format(len(results['fit_history']['loss']) if results['fit_history'] is not None else '')
+            telegram_send.send(messages=["training for {} completed in {} mins {}".format(filename, mins, gens)])
+        except Exception as e:
+            pass
 
     post_process_results(results, data_formatter, experiment_cfg)
 

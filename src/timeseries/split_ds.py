@@ -44,12 +44,13 @@ if __name__ == '__main__':
                            ohlc_features=False,
                            inst=cfg['data_cfg']['inst'])
 
-    # plotly_ts_candles(df.iloc[-5000:, :],
-    #                   features=df.columns[4:],
-    #                   instrument='ES',
-    #                   adjust_height=(True, 0.6),
-    #                   template='plotly_dark',
-    #                   rows=[i for i in range(len(df.columns[4:]))])
+    # Plot sample
+    plotly_ts_candles(df.iloc[-5000:, :],
+                      features=df.columns[4:8],
+                      instrument='ES',
+                      adjust_height=(True, 0.6),
+                      template='plotly_dark',
+                      rows=[i for i in range(len(df.columns[4:8]))])
 
     # %%
     df_subsets = set_subsets_and_test(df, cfg['split_cfg'])
@@ -76,7 +77,7 @@ if __name__ == '__main__':
                      file_path=img_path,
                      save_png=True,
                      legend=True,
-                     label_scale=2,
+                     label_scale=1,
                      title='SPLIT CFG: {}'.format(str(cfg['split_cfg'])),
                      legend_labels=['train', 'test', 'val'])
 

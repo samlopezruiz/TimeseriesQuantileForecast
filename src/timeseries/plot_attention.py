@@ -15,7 +15,7 @@ if __name__ == "__main__":
                    }
 
     project = 'snp'
-    results_cfg = {'experiment_name': '60t_ema_q357',
+    results_cfg = {'experiment_name': '60t_ema_q159',
                    'results': 'attention_processed'
                    }
 
