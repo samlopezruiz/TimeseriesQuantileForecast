@@ -2,12 +2,13 @@ import os
 import shutil
 import zipfile
 from os import listdir
-
+import boto3
+import botocore
+from botocore.config import Config
 import joblib
 import pandas as pd
 
 from src.timeseries.utils.dataframe import renamer
-from src.timeseries.utils.mega import Mega
 
 
 def download_datasets(dataset_cfg, project):
@@ -25,10 +26,25 @@ def download_datasets(dataset_cfg, project):
             else:
                 print('\nDownloading: {}'.format(file_cfg['file_name']))
                 if 'mega' in file_cfg['url']:
+                    from src.timeseries.utils.mega import Mega
                     mega = Mega()
                     mega.download_url(file_cfg['url'],
                                       dest_path=os.path.join(save_path, key),
                                       dest_filename=file_cfg['file_name'])
+
+                elif 's3' in file_cfg['url']:
+                    s3 = boto3.client('s3', config=Config(signature_version=botocore.UNSIGNED))
+                    try:
+                        bucket_name = file_cfg['url'].split('.')[0].split('/')[2]
+                        filepath = file_cfg['url'].split('.com')[1][1:]
+                        save_folder = os.path.join(save_path, key, file_cfg['file_name'])
+                        s3.download_file(bucket_name, filepath, save_folder)
+
+                    except botocore.exceptions.ClientError as e:
+                        if e.response['Error']['Code'] == "404":
+                            print("The object does not exist.")
+                        else:
+                            raise
                 else:
                     raise Exception('method not implemented to download from url: \n{}'.format(file_cfg['url']))
 

@@ -16,3 +16,5 @@ tenacity~=5.1.5
 yaml~=0.2.5
 pyyaml~=5.4.1
 scikit-learn~=0.24.2
+boto3~=1.18.21
+botocore~=1.21.41

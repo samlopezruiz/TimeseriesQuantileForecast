@@ -1,0 +1,34 @@
+# dataset subfolder
+day:
+
+    # dataset file
+    - description: S&P dataset with 1 day frequency. ene 2012 - june 2021
+      file_name: ES_day_2021-2021_6.csv
+      url: https://ts-datasets-slr.s3.us-west-2.amazonaws.com/snp/ES_2012_5-2021_6.csv
+
+    - description: Nasdaq dataset with 1 day frequency. ene 2012 - june 2021
+      file_name: NQ_day_2021-2021_6.csv
+      url: https://ts-datasets-slr.s3.us-west-2.amazonaws.com/snp/NQ_2012_5-2021_6.csv
+
+    - description: Fed dataset 1 day frequency. ene 2012 - june 2021
+      file_name: FED_day_2021-2021_6.csv
+      url: https://ts-datasets-slr.s3.us-west-2.amazonaws.com/snp/FED_2012_1-2021_6.csv
+
+vol:
+    - description: S&P volume profile 1 day frequency. ene 2012 - june 2021
+      file_name: ES_vol_2021-2021_6.zip
+      url: https://ts-datasets-slr.s3.us-west-2.amazonaws.com/snp/ES_2012_1-2021_6_vol.zip
+
+minute:
+    - description: S&P dataset with 1 minute frequency. ene 2012 - june 2021
+      file_name: ES_min_2021-2021_6.zip
+      url: https://ts-datasets-slr.s3.us-west-2.amazonaws.com/snp/ES_2012_1-2021_6.zip
+
+    - description: Nasdaq dataset with 1 minute frequency. ene 2012 - june 2021
+      file_name: NQ_min_2021-2021_6.zip
+      url: https://ts-datasets-slr.s3.us-west-2.amazonaws.com/snp/NQ_2012_1-2021_6.zip
+
+
+        
+        
+        
