@@ -9,7 +9,7 @@ Authors: Samuel López-Ruiz
 ## Model 
 The forecasting model used in this work is presented
 in the following paper (not of my authorship ): https://arxiv.org/pdf/1912.09363.pdf <br>
-and its respective code can be found in: https://github.com/google-research/google-research/tree/master/tft
+and its respective code can be found in: https://github.com/google-research/google-research/tree/master/tft. <br>
 The model consists on a novel attention-based architecture which combines high-performance multi-horizon 
 forecasting with interpretable insights into temporal dynamics. <br>
 
