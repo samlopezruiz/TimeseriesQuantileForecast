@@ -8,10 +8,12 @@ Authors: Samuel López-Ruiz
 
 ## Model 
 The forecasting model used in this work is presented
-in the following paper: https://arxiv.org/pdf/1912.09363.pdf <br>
+in the following paper (not of my authorship ): https://arxiv.org/pdf/1912.09363.pdf <br>
+and its respective code can be found in: https://github.com/google-research/google-research/tree/master/tft
 The model consists on a novel attention-based architecture which combines high-performance multi-horizon 
 forecasting with interpretable insights into temporal dynamics. <br>
-Its respective code can be found in: https://github.com/google-research/google-research/tree/master/tft
+
+The proposal of this work is the multi-objective framework for tuning the model according to the decision-maker preferences.  
 <br>
 The quantile predictions obtained are plotted with the following nomenclature:
 * _Target variable_:
