@@ -4,11 +4,11 @@
 Authors: Samuel López-Ruiz
 
 ### Abstract
-> The uncertainty associated with the prediction is vital for decision making in financial time series forecasting. An attention-based deep learning model based on transformers is implemented to generate the high-performance quantile multi-horizon forecasting. The neural network model uses specialized components to analyze important variable in each forecasting task and visualize persistent temporal relationships. We use knowledge transfer to leverage the training process and only the weights from the deep learning model's last layer are optimized using a multi-objective evolutionary algorithm. The Pareto fronts obtained in this work, show that evolutionary algorithms can find wide range of solutions that allow the decision maker to fine tune the quantile forecasts. NSGA-II and NSGA-III are used as optimization algorithms and the example dataset consists of S&P 500 Futures.
+> The uncertainty associated with predictions is vital for decision making in financial time series forecasting. For the sake of enriching forecasts, quantile interval predictions are generated and their quality is evaluated using two conflicting indicators: quantile coverage error and quantile estimation error, which are later optimized using multi-objective evolutionary algorithms (MOEAs). The high performance quantile multi-horizon predictions are computed by an attention-based deep learning model based on transformers and the weights of its last layer are optimized using NSGA-II and NSGA-III. The Pareto fronts obtained in this work show that evolutionary algorithms can find a wide range of solutions that allow the decision maker to efficiently fine-tune the quantile forecasts without need of retraining the neural network. The results show that the decision maker can choose solutions whose risks' ranges variation is as high as 169% with only an increase of 5% in the original loss function. The dataset used in this work consists of S&P 500 Futures from Jan-2015 to Jun-2021 with one-hour frequency.
 
 ## Model 
-The forecasting model used in this work is presented
-in the following paper (not of my authorship ): https://arxiv.org/pdf/1912.09363.pdf <br>
+This is the repository for the work presented in: https://doi.org/10.1145/3512290.3528740 <br>
+The neural network model reference is: https://arxiv.org/pdf/1912.09363.pdf <br>
 and its respective code can be found in: https://github.com/google-research/google-research/tree/master/tft. <br>
 The model consists on a novel attention-based architecture which combines high-performance multi-horizon 
 forecasting with interpretable insights into temporal dynamics. <br>
